@@ -1,7 +1,7 @@
 on:
   push:
   schedule:
-  - cron: '30 16 * * *' # 08:30 everyday (UTC+8)
+  - cron: '30 0 * * *' # 08:30 everyday (UTC+8)
 
 jobs:
   checkin:
