@@ -38,8 +38,8 @@ def main():
     schema = schema_body['content']
     schema_version = schema['version']
 
-    assert answer_uuid == form_uuid, 'form mismatch, got {answer_uuid}, expect {form_uuid}'
-    assert answer_version == schema_version, 'version mismatch, got {answer_version}, expect {schema_version}'
+    assert answer_uuid == form_uuid, f'form mismatch, got {answer_uuid}, expect {form_uuid}'
+    assert answer_version == schema_version, f'version mismatch, got {answer_version}, expect {schema_version}'
 
     value = []
     for line in it:
