@@ -39,7 +39,6 @@ def main():
     schema_version = schema['version']
 
     assert answer_uuid == form_uuid, f'form mismatch, got {answer_uuid}, expect {form_uuid}'
-    assert answer_version == schema_version, f'version mismatch, got {answer_version}, expect {schema_version}'
 
     value = []
     for line in it:
@@ -59,6 +58,9 @@ def main():
     result = rsp.json()
     assert result['success'], rsp.text
     print('提交成功', result['content']['formInstId'])
+
+    # best effort
+    assert answer_version == schema_version, f'version mismatch, got {answer_version}, expect {schema_version}'
 
 if __name__ == '__main__':
     main()
