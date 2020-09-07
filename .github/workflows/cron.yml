@@ -1,18 +1,18 @@
-on:
-  push:
-  schedule:
-  - cron: '30 0 * * *' # 08:30 everyday (UTC+8)
+# on:
+#   push:
+#   schedule:
+#   - cron: '30 0 * * *' # 08:30 everyday (UTC+8)
 
-jobs:
-  checkin:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v1
-      with:
-        python-version: 3.x
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - run: ./checkin.py '${{ secrets.ANSWER_URL }}'
+# jobs:
+#   checkin:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2
+#     - uses: actions/setup-python@v1
+#       with:
+#         python-version: 3.x
+#     - name: Install dependencies
+#       run: |
+#         python -m pip install --upgrade pip
+#         pip install -r requirements.txt
+#     - run: ./checkin.py '${{ secrets.ANSWER_URL }}'
